@@ -1,6 +1,16 @@
+const dispalyLocalStorage = () => {
+    const cart = getCart()
+    for (const product in cart) {
+        dispalyProducts(product)
+    }
+}
+
 const addItems = () => {
     const nameField = document.getElementById('name-field');
     const productName = nameField.value;
+    if (!productName) {
+        return;
+    }
     // display on the ui 
     dispalyProducts(productName)
 
@@ -35,3 +45,5 @@ const addProductsToCart = name => {
     const cartStringfied = JSON.stringify(cart);
     localStorage.setItem('cart', cartStringfied)
 }
+
+dispalyLocalStorage()
