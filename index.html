@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: cadetblue;
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        input#name-field {
+            width: 80%;
+            padding: 5px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            font-size: 18px;
+            background: beige;
+        }
+
+        button {
+            border: none;
+            padding: 7px;
+            border-radius: 5px;
+            font-size: 18px;
+            background: #4d6478;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Add To Shopping</h1>
+            <input type="text" id="name-field">
+            <button onclick="addItems()">Add Items</button>
+            <br>
+            <ul id="products">
+                <h3>Products List</h3>
+
+            </ul>
+            <br>
+            <button onclick="placeOrder()">Place Order</button>
+        </div>
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
