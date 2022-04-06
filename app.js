@@ -23,7 +23,6 @@ const addItems = () => {
 const dispalyProducts = (name) => {
     const products = document.getElementById('products')
     const li = document.createElement('li')
-    li.classList.add('list')
     li.innerText = name;
     products.appendChild(li)
 }
@@ -53,8 +52,9 @@ const addProductsToCart = name => {
 
 // remove items 
 const removeItems = () => {
-    document.querySelector('.list').textContent = '';
+    document.getElementById('products').textContent = '';
     localStorage.removeItem('cart')
+    console.log('remove')
 }
 
 
