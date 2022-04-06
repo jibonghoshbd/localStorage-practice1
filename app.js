@@ -23,6 +23,7 @@ const addItems = () => {
 const dispalyProducts = (name) => {
     const products = document.getElementById('products')
     const li = document.createElement('li')
+    li.classList.add('list')
     li.innerText = name;
     products.appendChild(li)
 }
@@ -41,9 +42,20 @@ const getCart = () => {
 
 const addProductsToCart = name => {
     const cart = getCart()
-    cart[name] = 1;
+    if (cart[name]) {
+        cart[name] = cart[name] + 1;
+    } else {
+        cart[name] = 1;
+    }
     const cartStringfied = JSON.stringify(cart);
     localStorage.setItem('cart', cartStringfied)
 }
+
+// remove items 
+const removeItems = () => {
+    document.querySelector('.list').textContent = '';
+    localStorage.removeItem('cart')
+}
+
 
 dispalyLocalStorage()
